@@ -75,6 +75,7 @@ export default class WysiwygEditor extends Component {
     ariaDescribedBy: PropTypes.string,
     ariaExpanded: PropTypes.string,
     ariaHasPopup: PropTypes.string,
+    lang: PropTypes.string
   };
 
   static defaultProps = {
@@ -349,6 +350,7 @@ export default class WysiwygEditor extends Component {
       ariaDescribedBy,
       ariaExpanded,
       ariaHasPopup,
+      lang
     } = this.props;
     const {
       options,
@@ -426,6 +428,7 @@ export default class WysiwygEditor extends Component {
                 onChange={this.onChange}
                 editorState={editorState}
                 config={colorPicker}
+                lang={lang}
               />}
               {options.indexOf('link') >= 0 && <LinkControl
                 modalHandler={this.modalHandler}

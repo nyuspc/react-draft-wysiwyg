@@ -90,6 +90,7 @@ class Playground extends Component {
               toolbarClassName="playground-toolbar"
               wrapperClassName="playground-wrapper"
               editorClassName="playground-editor"
+              lang="zh"
               uploadCallback={this.imageUploadCallBack}
               placeholder="testing"
               spellCheck

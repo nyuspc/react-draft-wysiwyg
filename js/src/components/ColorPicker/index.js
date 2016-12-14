@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, { Component, PropTypes } from 'react';
+import LANG from '../../config/lang.js';
 import classNames from 'classnames';
 import {
   colors,
@@ -96,7 +97,7 @@ export default class ColorPicker extends Component {
   };
 
   renderModal: Function = (): Object => {
-    const { config: { popupClassName } } = this.props;
+    const { config: { popupClassName }, lang } = this.props;
     const { currentColor, currentBgColor, currentStyle } = this.state;
     const currentSelectedColor = (currentStyle === 'color') ? currentColor : currentBgColor;
     return (
@@ -112,7 +113,7 @@ export default class ColorPicker extends Component {
             )}
             onClick={this.setCurrentStyleColor}
           >
-            Text
+            { LANG['TEXT'][lang] }
           </span>
           <span
             className={classNames(
@@ -121,7 +122,7 @@ export default class ColorPicker extends Component {
             )}
             onClick={this.setCurrentStyleBgcolor}
           >
-            Background
+            { LANG['BACKGROUND'][lang] }
           </span>
         </span>
         <span className="rdw-colorpicker-modal-options">
