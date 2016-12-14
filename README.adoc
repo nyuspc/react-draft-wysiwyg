@@ -1,0 +1,36 @@
+# 一个基于React和Draft.js的富文本编辑器
+
+一个基于React和Draft.js的富文本编辑器，符合中文的编辑习惯
+[Demo Page](https://jpuri.github.io/react-draft-wysiwyg).
+
+![](http://i.imgur.com/tU7kJ6i.gif)
+
+
+## Installing
+The package can be installed from npm `react-draft-wysiwyg`
+
+## Getting started
+Editor can be used as simple React Component:
+```
+import { Editor } from \'react-draft-wysiwyg\';
+import 'react-draft-wysiwyg.css';
+<Editor
+  toolbarClassName="home-toolbar"
+  wrapperClassName="home-wrapper"
+  editorClassName="home-editor"
+  onChange={this.onEditorChange}
+  uploadCallback={uploadImageCallBack}
+/>
+```
+
+## Docs
+For more documentation check [here](https://jpuri.github.io/react-draft-wysiwyg/#/docs?_k=jjqinp).
+
+## Questions Discussions
+For discussions join public channel #rd-wysiwyg in [DraftJS Slack Organization](https://draftjs.herokuapp.com/).
+
+## Thanks
+Original motivation and sponsorship for this work came from [iPaoo](http://www.ipaoo.com/). I am thankful to them for allowing the Editor to be open-sourced.
+
+## License
+MIT.
