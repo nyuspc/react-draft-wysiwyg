@@ -398,6 +398,7 @@ export default class WysiwygEditor extends Component {
                 onChange={this.onChange}
                 editorState={editorState}
                 config={blockType}
+                lang={lang}
               />}
               {options.indexOf('fontSize') >= 0 && <FontSizeControl
                 modalHandler={this.modalHandler}
@@ -454,6 +455,7 @@ export default class WysiwygEditor extends Component {
                 onChange={this.onChange}
                 uploadCallback={uploadCallback}
                 config={image}
+                lang={lang}
               />}
               {options.indexOf('remove') >= 0 && <RemoveControl
                 editorState={editorState}

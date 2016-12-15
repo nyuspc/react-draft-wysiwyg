@@ -5,6 +5,7 @@ import { Entity, AtomicBlockUtils } from 'draft-js';
 import classNames from 'classnames';
 import Option from '../Option';
 import Spinner from '../Spinner';
+import LANG from '../../config/lang.js';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 
 export default class ImageControl extends Component {
@@ -185,7 +186,7 @@ export default class ImageControl extends Component {
 
   renderAddImageModal(): Object {
     const { imgSrc, showImageUpload, showImageLoading, dragEnter, height, width } = this.state;
-    const { config: { popupClassName }, uploadCallback } = this.props;
+    const { config: { popupClassName }, uploadCallback, lang } = this.props;
     return (
       <div
         className={classNames('rdw-image-modal', popupClassName)}
@@ -197,7 +198,7 @@ export default class ImageControl extends Component {
               onClick={this.showImageUploadOption}
               className="rdw-image-modal-header-option"
             >
-              <span>File Upload</span>
+              <span>{ LANG['FILE_UPLOAD'][lang] }</span>
               <span
                 className={classNames(
                   'rdw-image-modal-header-label',
@@ -212,7 +213,7 @@ export default class ImageControl extends Component {
             onClick={this.showImageURLOption}
             className="rdw-image-modal-header-option"
           >
-            <span>URL</span>
+            <span>{ LANG['URL'][lang] }</span>
             <span
               className={classNames(
                 'rdw-image-modal-header-label',
@@ -236,7 +237,7 @@ export default class ImageControl extends Component {
                   htmlFor="file"
                   className="rdw-image-modal-upload-option-label"
                 >
-                  Drop the file or click to upload
+                  { LANG['UPLOAD_IMAGE'][lang] }
                 </label>
               </div>
               <input
@@ -281,13 +282,13 @@ export default class ImageControl extends Component {
             onClick={this.addImageFromState}
             disabled={!imgSrc || !height || !width}
           >
-            Add
+            { LANG['ADD'][lang] }
           </button>
           <button
             className="rdw-image-modal-btn"
             onClick={this.hideModal}
           >
-            Cancel
+            { LANG['CANCEL'][lang] }
           </button>
         </span>
         {showImageLoading ?

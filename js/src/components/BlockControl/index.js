@@ -5,6 +5,7 @@ import { getSelectedBlocksType } from 'draftjs-utils';
 import { RichUtils } from 'draft-js';
 import classNames from 'classnames';
 import { Dropdown, DropdownOption } from '../Dropdown';
+import LANG from '../../config/lang.js';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 
 export default class BlockControl extends Component {
@@ -39,14 +40,14 @@ export default class BlockControl extends Component {
   }
 
   blocksTypes: Array<Object> = [
-    { label: 'Normal', style: 'unstyled' },
-    { label: 'H1', style: 'header-one' },
-    { label: 'H2', style: 'header-two' },
-    { label: 'H3', style: 'header-three' },
-    { label: 'H4', style: 'header-four' },
-    { label: 'H5', style: 'header-five' },
-    { label: 'H6', style: 'header-six' },
-    { label: 'Blockquote', style: 'blockquote' },
+    { label: LANG['NORMAL'][this.props.lang], style: 'unstyled' },
+    { label: LANG['H1'][this.props.lang], style: 'header-one' },
+    { label: LANG['H2'][this.props.lang], style: 'header-two' },
+    { label: LANG['H3'][this.props.lang], style: 'header-three' },
+    { label: LANG['H4'][this.props.lang], style: 'header-four' },
+    { label: LANG['H5'][this.props.lang], style: 'header-five' },
+    { label: LANG['H6'][this.props.lang], style: 'header-six' },
+    { label: LANG['BLOCKQUOTE'][this.props.lang], style: 'blockquote' },
   ];
 
   toggleBlockType: Function = (blockType: string) => {
