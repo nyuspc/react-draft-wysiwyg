@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
-    <title>outdent</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="outdent" fill="#000000">
-            <g id="Layer_1">
-                <g id="Group">
-                    <rect id="Rectangle-path" x="5.3961663" y="3.1934359" width="10.5733042" height="1.1965812"></rect>
-                    <rect id="Rectangle-path" x="0.0394923414" y="0.00255270655" width="15.9299781" height="1.1965812"></rect>
-                    <rect id="Rectangle-path" x="0.0394923414" y="12.7660855" width="15.9299781" height="1.1965812"></rect>
-                    <rect id="Rectangle-path" x="5.3961663" y="9.57520228" width="10.5733042" height="1.1965812"></rect>
-                    <rect id="Rectangle-path" x="5.3961663" y="6.38431909" width="10.5733042" height="1.1965812"></rect>
-                    <polygon id="Shape" points="2.1868884 4.49120798 0 6.98260969 2.1868884 9.4740114"></polygon>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="28.35px" height="28.35px" viewBox="0 0 28.35 28.35" enable-background="new 0 0 28.35 28.35" xml:space="preserve">
+<g>
+	<path d="M23.838,17.758H11.874c-0.406,0-0.747,0.33-0.747,0.743c0,0.41,0.342,0.748,0.747,0.748h11.964
+		c0.401,0,0.738-0.337,0.738-0.748C24.576,18.088,24.239,17.758,23.838,17.758z"/>
+	<path d="M23.773,22.09H4.156c-0.406,0-0.747,0.33-0.747,0.743c0,0.41,0.342,0.748,0.747,0.748h19.618
+		c0.401,0,0.738-0.337,0.738-0.748C24.511,22.42,24.174,22.09,23.773,22.09z"/>
+	<path d="M11.874,10.292h11.964c0.401,0,0.738-0.332,0.738-0.738c0-0.42-0.337-0.748-0.738-0.748H11.874
+		c-0.406,0-0.747,0.328-0.747,0.748C11.127,9.959,11.468,10.292,11.874,10.292z"/>
+	<path d="M4.184,5.656h19.703c0.401,0,0.738-0.332,0.738-0.738c0-0.42-0.337-0.748-0.738-0.748H4.184
+		c-0.406,0-0.747,0.328-0.747,0.748C3.437,5.323,3.778,5.656,4.184,5.656z"/>
+	<path d="M23.838,13.294H11.874c-0.406,0-0.747,0.329-0.747,0.74c0,0.406,0.342,0.738,0.747,0.738h11.964
+		c0.401,0,0.738-0.333,0.738-0.738C24.576,13.623,24.239,13.294,23.838,13.294z"/>
+</g>
+<polygon points="7.955,18.374 3.219,14.038 7.954,9.703 "/>
 </svg>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-<g>
-	<path d="M6.045,2v0.992L4.785,3v5.172c0,0.859,0.243,1.512,0.727,1.957s1.124,0.668,1.918,0.668c0.836,0,1.509-0.221,2.019-0.664
-		c0.511-0.442,0.766-1.096,0.766-1.961V3l-1.26-0.008V2h2.784H13v0.992L11.739,3v5.172c0,1.234-0.398,2.181-1.195,2.84
-		C9.747,11.671,8.709,12,7.43,12c-1.242,0-2.248-0.329-3.017-0.988c-0.769-0.659-1.152-1.605-1.152-2.84V3L2,2.992V2h1.261H6.045z"
-		/>
-</g>
-<rect x="2" y="13" width="11" height="1"/>
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="28.35px" height="28.35px" viewBox="0 0 28.35 28.35" enable-background="new 0 0 28.35 28.35" xml:space="preserve">
+<rect x="5.762" y="22.677" width="17.188" height="1.333"/>
+<path d="M17.911,4.131v0.878h0.943v9.443c0,1.314-0.104,2.243-0.311,2.784s-0.546,1.012-1.016,1.41
+	c-0.892,0.741-2.047,1.111-3.465,1.111c-0.995,0-1.859-0.185-2.593-0.556c-0.732-0.371-1.278-0.862-1.637-1.476
+	s-0.537-1.705-0.537-3.274V5.009h0.943V4.131h-4.25v0.878h0.905v9.419c0,1.346,0.09,2.334,0.27,2.963
+	c0.179,0.629,0.406,1.161,0.681,1.595s0.611,0.826,1.01,1.177c1.314,1.131,3.059,1.697,5.233,1.697c2.135,0,3.863-0.57,5.186-1.709
+	c0.397-0.342,0.734-0.73,1.009-1.165c0.275-0.434,0.506-0.978,0.693-1.631c0.188-0.653,0.281-1.621,0.281-2.903V5.009h0.905V4.131
+	H17.911z"/>
 </svg>

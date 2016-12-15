@@ -75,7 +75,7 @@ export default class WysiwygEditor extends Component {
     ariaDescribedBy: PropTypes.string,
     ariaExpanded: PropTypes.string,
     ariaHasPopup: PropTypes.string,
-    lang: PropTypes.string
+    lang: PropTypes.string,
   };
 
   static defaultProps = {
@@ -350,7 +350,7 @@ export default class WysiwygEditor extends Component {
       ariaDescribedBy,
       ariaExpanded,
       ariaHasPopup,
-      lang
+      lang,
     } = this.props;
     const {
       options,
