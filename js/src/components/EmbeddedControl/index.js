@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Entity, AtomicBlockUtils } from 'draft-js';
 import classNames from 'classnames';
+import LANG from '../../config/lang';
 import Option from '../Option';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 
@@ -13,6 +14,7 @@ export default class EmbeddedControl extends Component {
     onChange: PropTypes.func.isRequired,
     modalHandler: PropTypes.object,
     config: PropTypes.object,
+    lang: PropTypes.string,
   };
 
   state: Object = {
@@ -101,7 +103,7 @@ export default class EmbeddedControl extends Component {
 
   rendeEmbeddedLinkModal(): Object {
     const { embeddedLink, height, width } = this.state;
-    const { config: { popupClassName } } = this.props;
+    const { config: { popupClassName }, lang } = this.props;
     return (
       <div
         className={classNames('rdw-embedded-modal', popupClassName)}
@@ -109,7 +111,7 @@ export default class EmbeddedControl extends Component {
       >
         <div className="rdw-embedded-modal-header">
           <span className="rdw-embedded-modal-header-option">
-            <span>Embedded Link</span>
+            <span>{ LANG.EMBEDDED_LINK[lang] }</span>
             <span className="rdw-embedded-modal-header-label" />
           </span>
         </div>
@@ -117,7 +119,7 @@ export default class EmbeddedControl extends Component {
           <input
             ref={this.setURLInputReference}
             className="rdw-embedded-modal-link-input"
-            placeholder="Enter link"
+            placeholder={LANG.ENTER_LINK[lang]}
             onChange={this.updateEmbeddedLink}
             onBlur={this.updateEmbeddedLink}
             value={embeddedLink}
@@ -147,13 +149,13 @@ export default class EmbeddedControl extends Component {
             onClick={this.addEmbeddedLink}
             disabled={!embeddedLink || !height || !width}
           >
-            Add
+            { LANG.ADD[lang] }
           </button>
           <button
             className="rdw-embedded-modal-btn"
             onClick={this.closeModal}
           >
-            Cancel
+            { LANG.CANCEL[lang] }
           </button>
         </span>
       </div>

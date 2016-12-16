@@ -1,13 +1,13 @@
 /* @flow */
 
 import React, { Component, PropTypes } from 'react';
-import LANG from '../../config/lang.js';
 import classNames from 'classnames';
 import {
   colors,
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
 } from 'draftjs-utils';
+import LANG from '../../config/lang';
 import Option from '../Option';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 
@@ -18,6 +18,7 @@ export default class ColorPicker extends Component {
     editorState: PropTypes.object.isRequired,
     modalHandler: PropTypes.object,
     config: PropTypes.object,
+    lang: PropTypes.string,
   };
 
   state: Object = {
@@ -113,7 +114,7 @@ export default class ColorPicker extends Component {
             )}
             onClick={this.setCurrentStyleColor}
           >
-            { LANG['TEXT'][lang] }
+            { LANG.TEXT[lang] }
           </span>
           <span
             className={classNames(
@@ -122,7 +123,7 @@ export default class ColorPicker extends Component {
             )}
             onClick={this.setCurrentStyleBgcolor}
           >
-            { LANG['BACKGROUND'][lang] }
+            { LANG.BACKGROUND[lang] }
           </span>
         </span>
         <span className="rdw-colorpicker-modal-options">

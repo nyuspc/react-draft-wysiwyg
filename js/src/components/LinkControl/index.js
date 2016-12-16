@@ -10,6 +10,7 @@ import {
 import classNames from 'classnames';
 import { getFirstIcon } from '../../utils/toolbar';
 import Option from '../Option';
+import LANG from '../../config/lang';
 import { Dropdown, DropdownOption } from '../Dropdown';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 
@@ -20,6 +21,7 @@ export default class LinkControl extends Component {
     onChange: PropTypes.func.isRequired,
     modalHandler: PropTypes.object,
     config: PropTypes.object,
+    lang: PropTypes.string,
   };
 
   state: Object = {
@@ -165,14 +167,14 @@ export default class LinkControl extends Component {
   };
 
   renderAddLinkModal() {
-    const { config: { popupClassName } } = this.props;
+    const { config: { popupClassName }, lang } = this.props;
     const { linkTitle, linkTarget } = this.state;
     return (
       <div
         className={classNames('rdw-link-modal', popupClassName)}
         onClick={this.stopPropagation}
       >
-        <span className="rdw-link-modal-label">Link Title</span>
+        <span className="rdw-link-modal-label">{ LANG.LINK_TITLE[lang] }</span>
         <input
           ref={this.setLinkTitleReference}
           className="rdw-link-modal-input"
@@ -180,7 +182,7 @@ export default class LinkControl extends Component {
           onBlur={this.updateLinkTitle}
           value={linkTitle}
         />
-        <span className="rdw-link-modal-label">Link Target</span>
+        <span className="rdw-link-modal-label">{ LANG.LINK_TARGET[lang] }</span>
         <input
           ref={this.setLinkTextReference}
           className="rdw-link-modal-input"
@@ -194,13 +196,13 @@ export default class LinkControl extends Component {
             onClick={this.addLink}
             disabled={!linkTarget || !linkTitle}
           >
-            Add
+            { LANG.ADD[lang] }
           </button>
           <button
             className="rdw-link-modal-btn"
             onClick={this.hideLinkModal}
           >
-            Cancel
+            { LANG.CANCEL[lang] }
           </button>
         </span>
       </div>

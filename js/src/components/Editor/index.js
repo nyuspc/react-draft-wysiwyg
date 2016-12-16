@@ -50,7 +50,7 @@ export default class WysiwygEditor extends Component {
     onEditorStateChange: PropTypes.func,
     onContentStateChange: PropTypes.func,
     // initialContentState is deprecated
-    initialContentState: PropTypes.object,
+    defaultContentState: PropTypes.object,
     contentState: PropTypes.object,
     editorState: PropTypes.object,
     defaultEditorState: PropTypes.object,
@@ -411,6 +411,7 @@ export default class WysiwygEditor extends Component {
                 onChange={this.onChange}
                 editorState={editorState}
                 config={fontFamily}
+                lang={lang}
               />}
               {options.indexOf('list') >= 0 && <ListControl
                 modalHandler={this.modalHandler}
@@ -436,12 +437,14 @@ export default class WysiwygEditor extends Component {
                 editorState={editorState}
                 onChange={this.onChange}
                 config={link}
+                lang={lang}
               />}
               {options.indexOf('embedded') >= 0 && <EmbeddedControl
                 modalHandler={this.modalHandler}
                 editorState={editorState}
                 onChange={this.onChange}
                 config={embedded}
+                lang={lang}
               />}
               {options.indexOf('emoji') >= 0 && <EmojiControl
                 modalHandler={this.modalHandler}

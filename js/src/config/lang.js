@@ -21,7 +21,7 @@ const LANG = {
 	},
 	ADD: {
 		'en': 'Add',
-		'zh': '添加'
+		'zh': '插入'
 	},
 	CANCEL: {
 		'en': 'Cancel',
@@ -55,9 +55,25 @@ const LANG = {
 		'en': 'H6',
 		'zh': '标题六'
 	},
-	BLOCKQUOTE: {
-		'en': 'Blockquote',
-		'zh': '引用块'
-	}
+    LINK_TITLE: {
+        'en': 'Link Title',
+        'zh': '链接文字'
+    },
+    LINK_TARGET: {
+        'en': 'Link Target',
+        'zh': '链接目标'
+    },
+    FONT_FAMILY: {
+        'en': 'Font Family',
+        'zh': '字体'
+    },
+    EMBEDDED_LINK: {
+        'en': 'Embedded Link',
+        'zh': '嵌入链接'
+    },
+    ENTER_LINK: {
+        'en': 'Enter link ...',
+        'zh': '输入链接...'
+    }
 };
 export default LANG;

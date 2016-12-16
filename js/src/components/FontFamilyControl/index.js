@@ -7,6 +7,7 @@ import {
   getSelectionCustomInlineStyle,
 } from 'draftjs-utils';
 import classNames from 'classnames';
+import LANG from '../../config/lang';
 import { Dropdown, DropdownOption } from '../Dropdown';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 
@@ -17,6 +18,7 @@ export default class FontFamilyControl extends Component {
     editorState: PropTypes.object,
     modalHandler: PropTypes.object,
     config: PropTypes.object,
+    lang: PropTypes.string,
   };
 
   state: Object = {
@@ -56,7 +58,7 @@ export default class FontFamilyControl extends Component {
 
   render() {
     let { currentFontFamily } = this.state;
-    const { config: { className, dropdownClassName }, modalHandler } = this.props;
+    const { config: { className, dropdownClassName }, modalHandler, lang } = this.props;
     currentFontFamily =
       currentFontFamily && currentFontFamily.substring(11, currentFontFamily.length);
     return (
@@ -68,7 +70,7 @@ export default class FontFamilyControl extends Component {
           optionWrapperClassName={classNames('rdw-fontfamily-optionwrapper', dropdownClassName)}
         >
           <span className="rdw-fontfamily-placeholder">
-            {currentFontFamily || 'Font-Family'}
+            {currentFontFamily || LANG.FONT_FAMILY[lang]}
           </span>
           {
             fontFamilies.map((family, index) =>

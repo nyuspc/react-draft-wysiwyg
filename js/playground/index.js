@@ -2,33 +2,22 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import draftToHtml from 'draftjs-to-html'; // eslint-disable-line import/no-extraneous-dependencies
-import draftToMarkdown from 'draftjs-to-markdown'; // eslint-disable-line import/no-extraneous-dependencies
+import { stateToHTML } from 'draft-js-export-html'; // eslint-disable-line import/no-extraneous-dependencies
 import {
   convertFromHTML,
   convertToRaw,
+  convertFromRaw,
   ContentState,
   EditorState,
 } from 'draft-js';
 import { Editor } from '../src';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 
-const contentBlocks = convertFromHTML('<p>Lorem ipsum ' +
-      'dolor sit amet, consectetur adipiscing elit. Mauris tortor felis, volutpat sit amet ' +
-      'maximus nec, tempus auctor diam. Nunc odio elit,  ' +
-      'commodo quis dolor in, sagittis scelerisque nibh. ' +
-      'Suspendisse consequat, sapien sit amet pulvinar  ' +
-      'tristique, augue ante dapibus nulla, eget gravida ' +
-      'turpis est sit amet nulla. Vestibulum lacinia mollis  ' +
-      'accumsan. Vivamus porta cursus libero vitae mattis. ' +
-      'In gravida bibendum orci, id faucibus felis molestie ac.  ' +
-      'Etiam vel elit cursus, scelerisque dui quis, auctor risus.</p>');
+const contentBlocks = convertFromHTML('<p>请测试</p>');
 
 const contentState = ContentState.createFromBlockArray(contentBlocks);
 
-// const rawContentState = convertToRaw(contentState);
-
-const rawContentState = {"entityMap":{"0":{"type":"MENTION","mutability":"IMMUTABLE","data":{"text":"@abc","value":"abc","url":"href-abc"}},"1":{"type":"MENTION","mutability":"IMMUTABLE","data":{"text":"@abcd","value":"abcd","url":"href-abcd"}}},"blocks":[{"key":"3c8kv","text":"@abc testing mentions saving opps @abcd ","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":4,"key":0},{"offset":34,"length":5,"key":1}],"data":{}}]};
+const rawContentState = convertToRaw(contentState);
 
 class Playground extends Component {
 
@@ -44,87 +33,76 @@ class Playground extends Component {
     });
   };
 
-  setContentState: Function = () => {
-    this.setState({
-      contentState: rawContentState,
-    });
-  };
-
   onEditorStateChange: Function = (initEditorState) => {
     this.setState({
       initEditorState,
     });
   };
 
-  imageUploadCallBack: Function = file => new Promise(
-      (resolve, reject) => {
-        const xhr = new XMLHttpRequest(); // eslint-disable-line no-undef
-        xhr.open('POST', 'https://api.imgur.com/3/image');
-        xhr.setRequestHeader('Authorization', 'Client-ID 8d26ccd12712fca');
-        const data = new FormData(); // eslint-disable-line no-undef
-        data.append('image', file);
-        xhr.send(data);
-        xhr.addEventListener('load', () => {
-          const response = JSON.parse(xhr.responseText);
-          resolve(response);
-        });
-        xhr.addEventListener('error', () => {
-          const error = JSON.parse(xhr.responseText);
-          reject(error);
-        });
-      }
-    );
+  setContentState: Function = () => {
+    this.setState({
+      contentState: rawContentState,
+    });
+  };
+
+  imageUploadCallBack: Function = file => {
+    const url = 'http://api.factube.com/dbc/api/qiniu/uploadandgetURL';
+    const data = new FormData();
+    data.append('file', file);
+    const xtoken = '3b6bbad5-49ff-4fbd-9d8c-f9591a75e32e';
+    return fetch(url, {
+      method: 'POST',
+      headers: {
+        'x-auth-token': xtoken
+      },
+      body: data
+    }).then(response => {
+      return response.json();
+    }).then( json => {
+      return ( { data: { link: json.src } });
+    });
+  }
 
   render() {
     const { editorContent, contentState, initEditorState } = this.state;
+    const toolBar = {
+        options: ['inline', 'blockType', 'list', 'link', 'image', 'colorPicker', 'history'],
+        inline: {
+            inDropdown: false,
+            options: ['bold', 'italic', 'underline', 'strikethrough']
+        },
+        list: {
+            inDropdown: false,
+            options: ['unordered', 'ordered', 'indent', 'outdent']
+        },
+        'link': {
+            inDropdown: false,
+            options: ['link', 'unlink']
+        },
+        history: {
+            inDropdown: false,
+            options: ['undo', 'redo']
+        }
+    };
+    console.log(editorContent);
     return (
       <div className="playground-root">
-        <div className="playground-label">
-          Toolbar is alwasy <sup>visible</sup>
-        </div>
-        <button onClick={this.setContentState}>Force Editor State</button>
-        <div className="playground-editorSection">
-          <div className="playground-editorWrapper">
-            <Editor
-              defaultContentState={rawContentState}
-              toolbarClassName="playground-toolbar"
-              wrapperClassName="playground-wrapper"
-              editorClassName="playground-editor"
-              lang="zh"
-              uploadCallback={this.imageUploadCallBack}
-              placeholder="testing"
-              spellCheck
-              onFocus={() => {console.log('focus')}}
-              onBlur={() => {console.log('blur')}}
-              mention={{
-                separator: ' ',
-                trigger: '@',
-                suggestions: [
-                  { text: 'A', value: 'a', url: 'href-a' },
-                  { text: 'AB', value: 'ab', url: 'href-ab' },
-                  { text: 'ABC', value: 'abc', url: 'href-abc' },
-                  { text: 'ABCD', value: 'abcd', url: 'href-abcd' },
-                  { text: 'ABCDE', value: 'abcde', url: 'href-abcde' },
-                  { text: 'ABCDEF', value: 'abcdef', url: 'href-abcdef' },
-                  { text: 'ABCDEFG', value: 'abcdefg', url: 'href-abcdefg' },
-                ],
-              }}
-            />
-          </div>
-          <textarea
-            className="playground-content no-focus"
-            value={draftToHtml(editorContent)}
-          />
-          <textarea
-            className="playground-content no-focus"
-            value={draftToMarkdown(editorContent)}
-          />
-          <textarea
-            className="playground-content no-focus"
-            value={JSON.stringify(editorContent)}
-          />
-        </div>
+        <button onClick={this.setContentState}>重置编辑器</button>
+      <div className="playground-content">
+        <Editor
+          defaultContentState={rawContentState}
+          toolbarClassName="playground-toolbar"
+          wrapperClassName="playground-wrapper"
+          editorClassName="playground-editor"
+          onChange={this.onEditorChange}
+          lang="zh"
+          uploadCallback={this.imageUploadCallBack}
+          placeholder="测试"
+          toolbar={toolBar}
+        />
+        <div>{ editorContent ? stateToHTML(convertFromRaw(editorContent)) : null }</div>
       </div>
+    </div>
     );
   }
 }
