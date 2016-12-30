@@ -26,7 +26,7 @@ export default class LinkControl extends Component {
 
   state: Object = {
     showModal: false,
-    linkTarget: '',
+    linkTarget: 'http://',
     linkTitle: '',
   };
 
