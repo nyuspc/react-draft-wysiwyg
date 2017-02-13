@@ -1,8 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { stateToHTML } from 'draft-js-export-html'; // eslint-disable-line import/no-extraneous-dependencies
+import ReactDOM from 'react-dom'; // eslint-disable-line import/no-extraneous-dependencies
 import {
     convertFromHTML,
     convertToRaw,
@@ -10,7 +9,8 @@ import {
     ContentState,
     EditorState,
 } from 'draft-js';
-import { Editor } from '../src';
+import { Editor, stateToHTML } from '../src';
+
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
 
 const contentBlocks = convertFromHTML('<p>请测试</p>');
@@ -58,6 +58,8 @@ class Playground extends Component {
         });
     }
     render() {
+        console.log(stateToHTML);
+        console.log(Editor);
         const { editorContent, contentState, initEditorState } = this.state;
         const toolBar = {
             options: ['inline', 'blockType', 'list', 'textAlign', 'link', 'image', 'colorPicker', 'history'],
@@ -103,7 +105,7 @@ class Playground extends Component {
             placeholder="测试"
             toolbar={toolBar}
             />
-            <div>{ editorContent ? stateToHTML(convertFromRaw(editorContent), options) : null }</div>
+            <div>{ editorContent ? stateToHTML(editorContent) : null }</div>
             </div>
             </div>
         );
