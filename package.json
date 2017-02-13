@@ -1,13 +1,13 @@
 {
-  "name": "react-draft-wysiwyg",
-  "version": "1.4.0",
-  "description": "A wysiwyg on top of DraftJS.",
+  "name": "react-draft-editor-ch",
+  "version": "0.5.8",
+  "description": "A editor on top of DraftJS.",
   "main": "dist/react-draft-wysiwyg.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jpuri/react-draft-wysiwyg.git"
+    "url": "git+https://github.com/nyuspc/react-draft-wysiwyg.git"
   },
-  "author": "Jyoti Puri",
+  "author": "Pengcheng Song",
   "devDependencies": {
     "autoprefixer": "^6.5.1",
     "babel-core": "^6.17.0",
@@ -72,5 +72,18 @@
     "check": "npm run lint && npm run flow",
     "start": "node config/server.dev.js"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpuri/react-draft-wysiwyg/issues"
+  },
+  "homepage": "https://github.com/jpuri/react-draft-wysiwyg#readme",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [
+    "react",
+    "draftjs",
+    "chinese",
+    "editor"
+  ]
 }
