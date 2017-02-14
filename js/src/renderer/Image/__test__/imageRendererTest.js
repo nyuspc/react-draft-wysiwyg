@@ -3,7 +3,7 @@
 import React from 'react';
 import { expect, assert } from 'chai';
 import { shallow } from 'enzyme';
-import { getAllBlocks } from 'draftjs-utils';
+import { getAllBlocks } from '../../utils/draftjsUtils';
 import Image from '../index';
 import { convertFromHTML, Entity, AtomicBlockUtils, ContentState, EditorState } from 'draft-js';
 

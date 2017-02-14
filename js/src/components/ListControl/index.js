@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { RichUtils } from 'draft-js';
-import { changeDepth, getSelectedBlocksType } from 'draftjs-utils';
+import { changeDepth, getSelectedBlocksType } from '../../utils/draftjsUtils';
 import classNames from 'classnames';
 import { getFirstIcon } from '../../utils/toolbar';
 import { Dropdown, DropdownOption } from '../Dropdown';

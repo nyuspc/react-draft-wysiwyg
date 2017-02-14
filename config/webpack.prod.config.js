@@ -11,11 +11,11 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: 'react-draft-wysiwyg.js',
+    filename: 'react-draft-editor-ch.js',
     libraryTarget: 'commonjs2',
   },
   externals: {
-    react: 'react',
+    'react': 'react',
     'react-dom': 'react-dom',
     'draft-js': 'draft-js',
   },
@@ -31,13 +31,13 @@ module.exports = {
         warnings: false,
       },
     }),
-    new ExtractTextPlugin('react-draft-wysiwyg.css', {
+    new ExtractTextPlugin('react-draft-editor-ch.css', {
       allChunks: true,
     }),
   ],
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /immutable\.js$|draftjs-utils\.js$/ },
+      { test: /\.js$/, loader: 'babel-loader', exclude: /immutable\.js$/ },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(

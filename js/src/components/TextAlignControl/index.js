@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component, PropTypes } from 'react';
-import { getSelectedBlocksMetadata, setBlockData } from 'draftjs-utils';
+import { getSelectedBlocksMetadata, setBlockData } from '../../utils/draftjsUtils';
 import classNames from 'classnames';
 import Option from '../Option';
 import { Dropdown, DropdownOption } from '../Dropdown';

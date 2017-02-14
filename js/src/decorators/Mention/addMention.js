@@ -3,7 +3,7 @@ import {
   Entity,
   Modifier,
 } from 'draft-js';
-import { getSelectedBlock } from 'draftjs-utils';
+import { getSelectedBlock } from '../../utils/draftjsUtils';
 
 export default function addMention(
   editorState: EditorState,

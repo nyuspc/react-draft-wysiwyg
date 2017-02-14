@@ -15,13 +15,13 @@ module.exports = {
     path: path.join(__dirname, '../static'),
     filename: 'bundle.js',
     publicPath: '/static/',
-  },
+  }
   module: {
     loaders: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /draftjs-to-markdown\.js$|immutable\.js$|draftjs-utils\.js$|draftjs-to-html\.js$|lodash\.js$/,
+        exclude: /draftjs-to-markdown\.js$|immutable\.js$|lodash\.js$/,
       },
       {
         test: /\.css$/,

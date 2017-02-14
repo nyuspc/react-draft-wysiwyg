@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component, PropTypes } from 'react';
-import { getSelectionInlineStyle } from 'draftjs-utils';
+import { getSelectionInlineStyle } from '../../utils/draftjsUtils';
 import { RichUtils, EditorState, Modifier } from 'draft-js';
 import classNames from 'classnames';
 import { getFirstIcon } from '../../utils/toolbar';

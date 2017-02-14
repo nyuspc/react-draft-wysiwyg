@@ -6,7 +6,7 @@ import {
   getSelectionText,
   getEntityRange,
   getSelectionEntity,
-} from 'draftjs-utils';
+} from '../../utils/draftjsUtils';
 import classNames from 'classnames';
 import { getFirstIcon } from '../../utils/toolbar';
 import Option from '../Option';

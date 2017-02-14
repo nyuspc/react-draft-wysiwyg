@@ -5,7 +5,7 @@ import {
   fontFamilies,
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
-} from 'draftjs-utils';
+} from '../../utils/draftjsUtils';
 import classNames from 'classnames';
 import LANG from '../../config/lang';
 import { Dropdown, DropdownOption } from '../Dropdown';

@@ -1,4 +1,4 @@
-import { getSelectedBlock } from 'draftjs-utils';
+import { getSelectedBlock } from '../../utils/draftjsUtils';
 import addMention from './addMention';
 
 let config = {

@@ -1,9 +1,9 @@
 /* @flow */
 
 import React, { Component, PropTypes } from 'react';
-import { getSelectedBlocksType } from 'draftjs-utils';
 import { RichUtils } from 'draft-js';
 import classNames from 'classnames';
+import { getSelectedBlocksType } from '../../utils/draftjsUtils';
 import { Dropdown, DropdownOption } from '../Dropdown';
 import LANG from '../../config/lang';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars

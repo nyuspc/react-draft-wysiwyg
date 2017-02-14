@@ -14,7 +14,7 @@ import {
   changeDepth,
   handleNewLine,
   customStyleMap,
-} from 'draftjs-utils';
+} from '../../utils/draftjsUtils';
 import classNames from 'classnames';
 import ModalHandler from '../../event-handler/modals';
 import FocusHandler from '../../event-handler/focus';
@@ -516,4 +516,4 @@ export default class WysiwygEditor extends Component {
   }
 }
 
-// todo: evaluate draftjs-utils to move some methods here
+// todo: evaluate ../../utils/draftjsUtils to move some methods here

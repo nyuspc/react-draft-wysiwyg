@@ -6,7 +6,7 @@ import {
   colors,
   toggleCustomInlineStyle,
   getSelectionCustomInlineStyle,
-} from 'draftjs-utils';
+} from '../../utils/draftjsUtils';
 import LANG from '../../config/lang';
 import Option from '../Option';
 import styles from './styles.css'; // eslint-disable-line no-unused-vars
