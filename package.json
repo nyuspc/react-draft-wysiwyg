@@ -1,6 +1,6 @@
 {
   "name": "react-draft-editor-ch",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "description": "A editor on top of DraftJS.",
   "main": "dist/react-draft-wysiwyg.js",
   "repository": {
