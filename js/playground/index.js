@@ -41,20 +41,14 @@ class Playground extends Component {
         });
     };
     imageUploadCallBack: Function = file => {
-        const url = 'http://api.factube.com/dbc/api/qiniu/uploadandgetURL';
-        const data = new FormData();
-        data.append('file', file);
-        const xtoken = '3b6bbad5-49ff-4fbd-9d8c-f9591a75e32e';
-        return fetch(url, {
-            method: 'POST',
-            headers: {
-                'x-auth-token': xtoken
-            },
-            body: data
-        }).then(response => {
-            return response.json();
-        }).then( json => {
-            return ( { data: { link: json.src } });
+        const url = 'http://7xs74m.com1.z0.glb.clouddn.com/c38cebae-fabd-4795-8a54-b91e139f44ad?e=1479293705&token=fZZHQu4JaXWtlWu9hvTpc9Rk4BFgUPngfAoq8Nio:5jVthf8FfVS8bIIyhIsfGx5pr10=';
+        const data = { data: { link: url } };
+        return new Promise((resolve, reject) => {
+            if (file) {
+                resolve(data);
+            } else {
+                reject();
+            }
         });
     }
     render() {

@@ -1,7 +1,7 @@
 {
   "name": "react-draft-editor-ch",
-  "version": "0.6.3",
-  "description": "A editor on top of DraftJS.",
+  "version": "0.6.5",
+  "description": "A editor on top of DraftJS with Chinese menu.",
   "main": "dist/react-draft-editor-ch.js",
   "repository": {
     "type": "git",
