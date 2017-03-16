@@ -129,8 +129,7 @@ function getSections(
 * Function to check if the block is an atomic entity block.
 */
 function isAtomicEntityBlock(block: Object): boolean {
-  if ((block.entityRanges.length > 0 && isEmptyString(block.text)) ||
-    block.type === 'atomic') {
+  if ((block.entityRanges.length > 0 && isEmptyString(block.text)) || block.type === 'atomic') {
     return true;
   }
   return false;
@@ -513,7 +512,7 @@ export function getBlockMarkup(
     blockHtml.push(
       getEntityMarkup(
         entityMap,
-        block.entityRanges[0].key,
+        block.entityRanges.length > 0 ? block.entityRanges[0].key : 0,
         undefined,
         customEntityTransform,
       ));
